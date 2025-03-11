@@ -2,9 +2,10 @@ from django.db import models
 from _base.models import BaseModel
 from django.utils.timezone import now
 from datetime import timedelta
+from users.models import GrowfiUser 
 
 class Transaction(BaseModel):
-    user_id = models.IntegerField('Usuario',blank=True, null=True)
+    user = models.ForeignKey(GrowfiUser, on_delete=models.CASCADE, related_name="transactions",verbose_name="Usuario")
     date = models.DateField('Fecha',blank=True, null=True)
     amount = models.DecimalField('Monto', max_digits=10, decimal_places=2, blank=True, null=True)
     category = models.CharField('Categoria', max_length=100, blank=True, null=True)
