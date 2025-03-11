@@ -53,5 +53,3 @@ class UserProfileView(generics.RetrieveUpdateAPIView, RequireUserTokenMixin):
     queryset = GrowfiUser.objects.all()
     serializer_class = UserSerializer
 
-    def get_object(self):
-        return self.request.user

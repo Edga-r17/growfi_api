@@ -19,3 +19,10 @@ class UserDetailTokensSerializer(serializers.ModelSerializer):
             'id', 'password', 'name', 'surname',
             'email'
         )
+
+class UserDetailSerializer(serializers.ModelSerializer):
+    token = serializers.CharField(source='growfi_auth_token.key', read_only=True)
+
+    class Meta:
+        model = GrowfiUser
+        fields = ('id', 'name', 'email', 'phone', 'photo', 'initials', 'token')

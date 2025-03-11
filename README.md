@@ -79,3 +79,30 @@ python manage.py runserver
 ```
 La API estará disponible en:
 http://127.0.0.1:8000/api/
+
+## 🚀 8. Documentación de la API en Postman
+
+Para facilitar las pruebas de la API, hemos creado una **colección en Postman** con todos los endpoints.
+
+🔗 **Accede a la documentación completa aquí:**  
+[![Ver en Postman](https://img.shields.io/badge/Ver%20Documentación%20en-Postman-orange?style=for-the-badge&logo=postman)](https://documenter.getpostman.com/view/27478850/2sAYk7Sizc)
+
+📌 **Pasos para usar la colección en Postman:**
+1. **Haz clic en el enlace** y abre la documentación.
+2. **Haz clic en "Run in Postman"** para importar la colección a Postman.
+3. **Configura la variable de entorno `base_url`** con la URL de tu API local o en producción.
+4. **Prueba cada endpoint directamente en Postman.**
+
+---
+
+## 🚀 Endpoints Disponibles en la API
+
+| Método | Endpoint | Descripción |
+|--------|---------|-------------|
+| **POST** | `/api/users/` | Registra un nuevo usuario |
+| **GET**  | `/api/user/<int:pk>/info/` | Obtiene el perfil del usuario autenticado |
+| **PATCH** | `/api/user/<int:pk>/info/` | Actualiza el perfil del usuario |
+| **POST** | `/api/transacciones/` | Crea una nueva transacción |
+| **GET**  | `/api/resumen/<user_id>/` | Obtiene un resumen de gastos del usuario |
+
+Para más detalles, consulta la documentación de Postman. 📖🚀
